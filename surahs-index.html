@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فهرس السور - القرآن الكريم</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1><a href="index.html">القرآن الكريم</a></h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="surahs-index.html">فهرس السور</a></li>
+                <li><a href="parts.html">الأجزاء</a></li>
+                <li><a href="surahs-index.html" id="search-link-nav">البحث</a></li> <li><a href="about.html" id="about-link-nav">عن الموقع</a></li> </ul>
+        </nav>
+        <div class="controls">
+            <label class="switch">
+                <input type="checkbox" id="theme-toggle-surahs-index">
+                <span class="slider round"></span>
+            </label>
+            <label for="theme-toggle-surahs-index" style="color: var(--color-dark-text);">الوضع الليلي</label>
+        </div>
+    </header>
+
+    <main>
+        <div class="search-section">
+            <input type="text" id="search-input" placeholder="ابحث في القرآن الكريم...">
+            <button id="search-button">بحث</button>
+        </div>
+        <div id="search-results" class="search-results">
+        </div>
+
+        <h2>فهرس السور</h2>
+        <div id="surah-list-container" class="surah-list-container">
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 موقع القرآن الكريم. جميع الحقوق محفوظة.</p>
+        <p><a href="#">سياسة الخصوصية</a> | <a href="#">تواصل معنا</a></p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

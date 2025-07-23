@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عن الموقع - القرآن الكريم</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>القرآن الكريم</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="surahs-index.html">فهرس السور</a></li>
+                <li><a href="parts.html">الأجزاء</a></li>
+                <li><a href="surahs-index.html">البحث</a></li>
+                <li><a href="about.html">عن الموقع</a></li>
+            </ul>
+        </nav>
+        <div class="controls">
+            <label class="switch">
+                <input type="checkbox" id="theme-toggle-about">
+                <span class="slider round"></span>
+            </label>
+            <label for="theme-toggle-about" style="color: var(--color-dark-text);">الوضع الليلي</label>
+        </div>
+    </header>
+
+    <main class="about-page">
+        <section class="about-section">
+            <h2>عن موقع القرآن الكريم</h2>
+            <p>
+                هذا الموقع هو مشروع شخصي يهدف إلى تسهيل تصفح وقراءة القرآن الكريم باللغة العربية.
+                نسعى لتوفير تجربة مستخدم سلسة ومريحة للوصول إلى سور وآيات القرآن الكريم.
+            </p>
+            <p>
+                الموقع لا يزال قيد التطوير وقد يتم إضافة المزيد من الميزات والتحسينات في المستقبل.
+                نرحب بأي ملاحظات أو اقتراحات لتحسين الموقع.
+            </p>
+        </section>
+
+        <section class="acknowledgements-section">
+            <h2>شكر وتقدير</h2>
+            <p>
+                نشكر كل من ساهم في إتاحة بيانات القرآن الكريم مفتوحة المصدر، مما جعل هذا المشروع ممكنًا.
+            </p>
+        </section>
+
+        <section class="contact-section">
+            <h2>تواصل معنا</h2>
+            <p>
+                إذا كان لديك أي استفسارات أو اقتراحات، يمكنك التواصل معنا عبر:
+                <a href="mailto:hanidani960@gmail.com">hanidani960@gmail.com</a>
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 موقع القرآن الكريم. جميع الحقوق محفوظة.</p>
+        <p><a href="#">سياسة الخصوصية</a> | <a href="#">تواصل معنا</a></p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const themeToggleAbout = document.getElementById('theme-toggle-about');
+            const savedTheme = localStorage.getItem('theme');
+
+            if (savedTheme === 'dark') {
+                document.body.classList.add('dark-mode');
+                if (themeToggleAbout) {
+                    themeToggleAbout.checked = true;
+                }
+            }
+
+            if (themeToggleAbout) {
+                themeToggleAbout.addEventListener('change', () => {
+                    document.body.classList.toggle('dark-mode');
+                    if (document.body.classList.contains('dark-mode')) {
+                        localStorage.setItem('theme', 'dark');
+                    } else {
+                        localStorage.setItem('theme', 'light');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

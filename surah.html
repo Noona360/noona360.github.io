@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="surah-page-title">القرآن الكريم</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1><a href="index.html">القرآن الكريم</a></h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="surahs-index.html">فهرس السور</a></li>
+                <li><a href="parts.html">الأجزاء</a></li>
+                <li><a href="surahs-index.html" id="search-link-nav">البحث</a></li> <li><a href="about.html" id="about-link-nav">عن الموقع</a></li> </ul>
+        </nav>
+        <div class="controls">
+            <label for="font-size">حجم الخط:</label>
+            <input type="range" id="font-size" min="16" max="32" value="20">
+            <label class="switch">
+                <input type="checkbox" id="theme-toggle-surah">
+                <span class="slider round"></span>
+            </label>
+            <label for="theme-toggle-surah" style="color: var(--color-dark-text);">الوضع الليلي</label>
+        </div>
+    </header>
+
+    <main>
+        <h2 id="surah-name"></h2>
+        <p id="surah-info"></p>
+
+        <div class="navigation-buttons top-buttons">
+            <button id="prev-surah-top">السورة السابقة</button>
+            <button id="next-surah-top">السورة التالية</button>
+        </div>
+
+        <div id="surah-content" class="surah-text">
+        </div>
+
+        <div class="navigation-buttons bottom-buttons">
+            <button id="prev-surah-bottom">السورة السابقة</button>
+            <button id="next-surah-bottom">السورة التالية</button>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 القرآن الكريم</p>
+        <p><a href="#">سياسة الخصوصية</a> | <a href="#">تواصل معنا</a></p>
+    </footer>
+
+    <script src="js/surah-script.js"></script>
+</body>
+</html>

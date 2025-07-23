@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أجزاء القرآن الكريم</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1><a href="index.html">القرآن الكريم</a></h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="surahs-index.html">فهرس السور</a></li>
+                <li><a href="parts.html">الأجزاء</a></li>
+                <li><a href="surahs-index.html" id="search-link-nav">البحث</a></li> <li><a href="about.html" id="about-link-nav">عن الموقع</a></li>     </ul>
+        </nav>
+        <div class="controls">
+            <label class="switch">
+                <input type="checkbox" id="theme-toggle-parts">
+                <span class="slider round"></span>
+            </label>
+            <label for="theme-toggle-parts" style="color: var(--color-dark-text);">الوضع الليلي</label>
+        </div>
+    </header>
+
+    <main>
+        <h2>أجزاء القرآن الكريم (الأحزاب)</h2>
+        <div id="parts-list-container" class="parts-list-container">
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 موقع القرآن الكريم. جميع الحقوق محفوظة.</p>
+        <p><a href="#">سياسة الخصوصية</a> | <a href="#">تواصل معنا</a></p>
+    </footer>
+
+    <script src="js/parts-script.js"></script>
+</body>
+</html>
