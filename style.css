@@ -57,7 +57,6 @@ body {
     background-color: var(--color-background);
     color: var(--color-text-dark);
     direction: rtl;
-    /* text-align: right;  تم إزالة هذا السطر لكي لا يتعارض مع التوسيط */
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -69,7 +68,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* تأكد من وجودها للسماح بالعناصر بالانتقال إلى سطر جديد */
 }
 
 header h1 {
@@ -89,7 +88,7 @@ nav ul {
     margin: 0;
     display: flex;
     gap: 20px;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* تأكد من وجودها للسماح للعناصر بالانتقال إلى سطر جديد */
     justify-content: center;
 }
 
@@ -112,12 +111,12 @@ main {
     background-color: var(--color-background-secondary);
     border-radius: 8px;
     box-shadow: var(--shadow-light);
-    text-align: center; /* **تمت الإضافة:** لتوسيط جميع النصوص والعناصر المضمنة داخل main */
+    text-align: center;
 }
 
 h2 {
     color: var(--color-primary);
-    text-align: center; /* **موجود بالفعل:** جيد للعناوين */
+    text-align: center;
     margin-bottom: 30px;
     font-size: 2em;
 }
@@ -128,17 +127,17 @@ h2 {
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 20px;
     padding: 20px;
-    justify-content: center; /* **تمت الإضافة:** لتوسيط الـ cards نفسها داخل grid */
+    justify-content: center;
 }
 
-.surah-item, .part-item { /* تطبيق نفس التنسيقات على surah-item و part-item */
-    background-color: var(--color-card-bg-light); /* استخدم لون أفتح للخلفية هنا */
+.surah-item, .part-item {
+    background-color: var(--color-card-bg-light);
     border: 1px solid var(--color-border);
     border-radius: 8px;
     box-shadow: var(--shadow-light);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     overflow: hidden;
-    text-align: center; /* **تمت الإضافة:** للتأكد من توسيط النص داخل كل عنصر */
+    text-align: center;
 }
 
 .surah-item:hover, .part-item:hover {
@@ -168,7 +167,7 @@ h2 {
 
 /* Welcome Section */
 .welcome-section {
-    text-align: center; /* **موجود بالفعل:** جيد */
+    text-align: center;
     padding: 50px 20px;
     background-color: var(--color-background-secondary);
     border-radius: 8px;
@@ -193,11 +192,12 @@ h2 {
 /* Search Section */
 .search-section {
     display: flex;
-    justify-content: center; /* **موجود بالفعل:** جيد لتوسيط عناصر البحث */
+    justify-content: center;
     align-items: center;
     gap: 10px;
     margin-bottom: 20px;
     padding: 10px 0;
+    flex-wrap: wrap; /* مهم جداً للسماح للعناصر بالانتقال لسطر جديد على الشاشات الصغيرة */
 }
 
 .search-section input[type="text"] {
@@ -221,7 +221,7 @@ h2 {
 .search-section button {
     padding: 10px 20px;
     background-color: var(--color-primary);
-    color: var(--color-text-dark); /* تغيير لون النص ليتناسب مع الباستيل */
+    color: var(--color-text-dark);
     border: none;
     border-radius: 25px;
     cursor: pointer;
@@ -240,7 +240,7 @@ h2 {
     background-color: var(--color-background-secondary);
     border-radius: 8px;
     box-shadow: var(--shadow-light);
-    text-align: right; /* **تم التغيير:** للحفاظ على محاذاة البحث لليمين */
+    text-align: right;
 }
 
 .search-results .result-item {
@@ -249,7 +249,7 @@ h2 {
     border-bottom: 1px dashed var(--color-border);
     color: var(--color-text-dark);
     line-height: 1.8;
-    text-align: right; /* **تم التغيير:** للحفاظ على محاذاة البحث لليمين */
+    text-align: right;
 }
 
 .search-results .result-item:last-child {
@@ -264,13 +264,13 @@ h2 {
 
 /* Surah Page Specific Styles */
 #surah-name {
-    text-align: center; /* **موجود بالفعل:** جيد */
+    text-align: center;
     font-size: 2.5em;
     margin-bottom: 10px;
 }
 
 #surah-info {
-    text-align: center; /* **موجود بالفعل:** جيد */
+    text-align: center;
     font-size: 1.1em;
     color: var(--color-text-medium);
     margin-bottom: 30px;
@@ -281,7 +281,7 @@ h2 {
     line-height: 2.2;
     margin-bottom: 15px;
     padding: 0 10px;
-    text-align: center; /* **تم الإبقاء عليه:** عادة ما يكون القرآن محاذى للضبط */
+    text-align: justify; /* تغيير من center إلى justify لتحسين القراءة في النصوص الطويلة */
     direction: rtl;
     transition: font-size 0.2s ease;
 }
@@ -296,15 +296,16 @@ h2 {
 
 .navigation-buttons {
     display: flex;
-    justify-content: center; /* **موجود بالفعل:** جيد لتوسيط الأزرار */
+    justify-content: center;
     gap: 20px;
     margin: 20px 0;
+    flex-wrap: wrap; /* السماح للأزرار بالانتقال لسطر جديد */
 }
 
 .navigation-buttons button {
     padding: 12px 25px;
     background-color: var(--color-primary);
-    color: var(--color-text-dark); /* تغيير لون النص ليتناسب مع الباستيل */
+    color: var(--color-text-dark);
     border: none;
     border-radius: 25px;
     cursor: pointer;
@@ -419,7 +420,7 @@ input:checked + .slider:before {
 }
 
 footer {
-    text-align: center; /* **تمت الإضافة:** لتوسيط محتوى الفوتر */
+    text-align: center;
     padding: 20px;
     margin-top: 30px;
     border-top: 1px solid var(--color-border);
@@ -447,24 +448,36 @@ footer a:hover {
     display: block;
 }
 
-/* Responsive adjustments */
+/* --- Responsive adjustments --- */
+
 @media (max-width: 768px) {
     header {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center; /* توسيط العناصر في الرأس */
         padding-bottom: 10px;
+        text-align: center; /* لضمان توسيط العنوان إذا كان لوحده */
+    }
+
+    header h1 {
+        margin-bottom: 15px; /* إضافة مسافة أسفل العنوان */
+        font-size: 1.8em; /* تقليل حجم العنوان قليلاً */
     }
 
     header nav ul {
         flex-direction: column;
         gap: 10px;
         width: 100%;
-        margin-top: 15px;
+        margin-top: 0; /* إزالة الـ margin-top الزائد */
     }
 
     header nav ul li {
         width: 100%;
         text-align: center;
+    }
+
+    header nav ul li a {
+        padding: 8px 0; /* زيادة مساحة الضغط على الروابط */
+        display: block; /* جعل الرابط يملأ المساحة */
     }
 
     .controls {
@@ -474,9 +487,9 @@ footer a:hover {
     }
 
     .surah-list-container, .parts-list-container {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); /* تقليل minmax أكثر للشاشات الصغيرة */
         padding: 10px;
-        justify-content: center; /* **تمت الإضافة:** لتوسيط الـ cards في الشاشات الصغيرة */
+        gap: 15px; /* تقليل الفراغ قليلاً */
     }
 
     main {
@@ -495,6 +508,40 @@ footer a:hover {
     .welcome-section p {
         font-size: 1em;
     }
+
+    .search-section {
+        flex-direction: column;
+        align-items: center; /* توسيط العناصر عند تكديسها عمودياً */
+        gap: 15px; /* زيادة الفجوة بين حقل البحث والزر */
+    }
+
+    .search-section input[type="text"] {
+        width: 90%; /* زيادة عرض حقل البحث ليملأ الشاشة تقريباً */
+        max-width: none; /* إزالة الحد الأقصى للعرض للسماح له بالتكيف */
+        margin-bottom: 0; /* إزالة الـ margin-bottom هنا لأن الفجوة موجودة */
+    }
+
+    .search-section button {
+        width: 90%; /* جعل الزر يملأ نفس عرض حقل البحث */
+        max-width: 300px; /* يمكن وضع حد أقصى للزر لكي لا يصبح عريضاً جداً */
+    }
+
+    .navigation-buttons {
+        flex-direction: column; /* تكديس الأزرار عمودياً */
+        gap: 15px; /* زيادة المسافة بين الأزرار */
+    }
+
+    .navigation-buttons button {
+        width: 90%; /* جعل الأزرار تملأ عرض الحاوية */
+        max-width: 300px; /* لكي لا تكون عريضة جداً على الأجهزة اللوحية */
+        margin: 0 auto; /* توسيط الأزرار الفردية */
+    }
+
+    .surah-text p {
+        font-size: 18px; /* تقليل حجم الخط قليلاً لجهاز الجوال */
+        line-height: 1.8; /* تقليل تباعد الأسطر قليلاً */
+        padding: 0 8px; /* تقليل الـ padding الأفقي قليلاً */
+    }
 }
 
 @media (max-width: 480px) {
@@ -502,22 +549,27 @@ footer a:hover {
         font-size: 1.5em;
     }
 
+    .surah-list-container, .parts-list-container {
+        grid-template-columns: 1fr; /* عمود واحد فقط لبطاقات السور/الأجزاء على الشاشات الصغيرة جداً */
+        padding: 10px;
+        gap: 15px;
+    }
+
+    .surah-item, .part-item {
+        margin: 0 auto; /* توسيط البطاقات الفردية عند عمود واحد */
+        max-width: 300px; /* يمكن تحديد حد أقصى لكي لا تظهر البطاقة عريضة جداً على الجوالات الصغيرة */
+    }
+
     .surah-text p {
-        font-size: 18px;
-        line-height: 2;
+        font-size: 17px; /* تقليل حجم الخط أكثر للشاشات الأصغر */
+        line-height: 1.7; /* تقليل تباعد الأسطر أكثر */
     }
 
-    .navigation-buttons button {
-        padding: 10px 15px;
-        font-size: 1em;
+    .welcome-section h2 {
+        font-size: 1.6em;
     }
 
-    .search-section {
-        flex-direction: column;
-    }
-
-    .search-section input[type="text"] {
-        width: 90%;
-        margin-bottom: 10px;
+    .welcome-section p {
+        font-size: 0.95em;
     }
 }
